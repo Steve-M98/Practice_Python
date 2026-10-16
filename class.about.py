@@ -1,7 +1,7 @@
 ''' CLASS
-(1) What is class
-(2) ordinary vs static properties
-(3) special/magic methods
+    (1) What is class
+    (2) ordinary vs static properties
+    (3) special/magic methods
 '''
 
 
@@ -13,7 +13,7 @@ print("===== What is class ====_")
 class Person():
 
     # state
-message = "class state property"
+    message = "class state property"
 
 # constructor
 
@@ -29,9 +29,10 @@ def introduce(self):
 
 
 def say_age(self):
-    prin(f"{self. name} says I am {self. age}!")
+    print(f"{self. name} says I am {self. age}!")
 
 
+# bu yerda classsmethod static method deyiladi. bu asosiy clas.  nomi bilan chaqiriladi.
 @classmethod
 def explain(cls):
     print("static method property executed!")
@@ -50,11 +51,12 @@ person2. say_age()
 
 
 print("===== ordinary vs static properties =====")
-# static state
-new_message = Person message
+
+#  bu yerda static state ni ishlatdik
+new_message = Person.message
 print("new_message:", new_message)
 
-# static method
+# static method ni ishlatdik
 Person.explain()
 
 
@@ -78,13 +80,13 @@ class Car():
 # method
 
     def start_engine(self):
-        print(f"the {self name} started engine!")
+        print(f"the {self.name} started engine!")
 
     def stop_engine(self):
-        print(f"the {self-name} stopped engine!")
+        print(f"the {self.name} stopped engine!")
 
     def __str__(self):
-        print(f"the {self.name} was produced in {self.year} year!")
+        return f"{self.name} was produced in {self.year} year!"
 
     def __call__(self):
         print("Object called as function!")
@@ -93,12 +95,14 @@ class Car():
 
 my_car = Car("Ferrari", 2025)
 my_car.start_engine()
-my_car. stop_engine()
+my_car.stop_engine()
 
 
 print("-------")
 your_car = Car("Toyota", 2026)
 print(your_car)
+#  bu yerda call methodi orqali objectni function usulida call qildik
+your_car()
 
 response = your_car()  # CALL
 print("response:", response)

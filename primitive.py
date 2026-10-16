@@ -1,6 +1,6 @@
 print("===== NUMBER =====")
-# in JAVA, variable is a name storage location!
-# in Python, variable is named reference!
+# JAVA ==> VARIABLE ==> ma'lumot manzilining nomlanishi;
+# Python ==> VARIABLE ==> REFERENCE ning nomlanishi ;
 count = 100
 count_type = type(count)
 print(f"the count: {count} and type: {count_type}")
@@ -8,23 +8,24 @@ print(f"the count: {count} and type: {count_type}")
 
 result1 = count.bit_count()  # method
 result2 = count. numerator  # state
-print(result1, resultz)
+print(result1, result2)
 
 print("===== STRING ====")
 # METHODS: upper() lower() title() find() replace()
 
 course = "AI Python FullStack"
 result = type(course)
-print(f"the result (1): {result}")
+print(f"the result (1): {result}  => Bu type()")
 
 result = course.title()
-print(f"the result (2): {result}")
+print(f"the result (2): {result} => Bu title()")
 
 result = course. upper()
-print(f"the result (3): {result}")
+print(f"the result (3): {result} => Bu UPPERCASE")
 
 result = course.replace("FullStack", "MasterClass")
-print(f"the result (4): {result}")
+print(
+    f"the result (4): {result} => Bu replace() bu so'z o'rniga boshqa so'zni qoyib berdi")
 
 
 print("==== BOOLEAN ====")
@@ -34,9 +35,9 @@ print("y:", y)
 result = y.isnumeric()
 print(f"the input value is numeric: {result}")
 
-# TRUTHY FALSY value
+# ======  TRUTHY FALSY value =======
 # TRUTHY: True 100 -100 "MIT"
-# FALSY: False 0 '''' None
+# FALSY: False 0 "" None
 
 test_falsy = "" or False or None or 0
 print("test_falsy:", bool(test_falsy))
