@@ -61,24 +61,56 @@ class Fish(Animal):  # Child
     def swim(self):
         print("Yes, I can swim!")
 
-        dog = Dog("Rex", "wow", True)
-        cat = Cat("Tom", "myeow", True)
-        fish = Fish("Nemo", "ZzZ", False)
 
-        dog.introduce()
-        cat.introduce()
-        fish.introduce()
+dog = Dog("Rex", "wow", True)
+cat = Cat("Tom", "myeow", True)
+fish = Fish("Nemo", "ZzZ", False)
 
-        print("************************")
-        dog.make_voice()
-        fish.make_voice()
+dog.introduce()
+cat.introduce()
+fish.introduce()
 
-        print("************************")
+print("************************")
+dog.make_voice()
+fish.make_voice()
+
+print("************************")
 
 # buyerda asosiy Parent classdagi state va methodlarni child larda ham ishlatdik
-        print(Animal.description)
-        print(Dog.description)
+print(Animal.description)
+print(Dog.description)
 
-        print(dog.voice, fish. voice)
-        print("dog status:", dog.status)
-        print("cat status:", cat.status)
+print(dog.voice, fish. voice)
+print("dog status:", dog._status)
+print("cat status:", cat._status)
+
+print("===== POLIMORPHISM ======")
+# bu bir hil nomdagi methodni har hil korinishda yozib ishlatish.
+# Ya'ni Parentda yozilgan methodni nomi bilan bir hil nomdagi methodni child ni ichiga yozilsa hammasi o'z klasiidagi methodni ishga tushiradi.
+# agar o'zida bo'lmasa keyin parentdagi methodni qabul qiladi.
+dog.make_voice()
+fish.make_voice()
+
+print("************************")
+
+#  buyerda fish ni Fish clasdan olinganini tekshiryapmiz
+#  buyerda Fish ni Animal clasdan olinganini tekshiryapmiz
+#  buyerda Animal ni object clasdan olinganini tekshiryapmiz
+#  ya'ni hammsi oxiri OBJECT clasidan olingan chunki PYTHONDA hamma narsa OBJECT
+
+
+# fish > Fish > Animal > object
+a = isinstance(fish, Fish)
+b = isinstance(fish, Animal)
+c = isinstance(fish, object)
+d = isinstance("MIT", object)
+result = a and b and c and d
+print(f"the result: {result}")
+
+
+#  tepada yozib tekshiragn ishimizni endi < issubclass > functioni orqali ham yozib tekshirdik
+
+# Fish > Animal > object
+datal = issubclass(Fish, Animal)
+data2 = issubclass(Animal, object)
+print("data:", datal, data2)
